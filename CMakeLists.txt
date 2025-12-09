@@ -14,6 +14,7 @@ function(add_day YEAR DAY)
 
     foreach(PART RANGE 1 2)
         if(EXISTS ${SRC_DIR}/part${PART}.cpp)
+            file(MAKE_DIRECTORY "${BIN_DIR}")
             add_executable(year${YEAR}_day${DAY}_part${PART} ${SRC_DIR}/part${PART}.cpp)
         endif()
     endforeach()
